@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="forcatitle.png" type="image/icon type">
+    <title>Jogo da Forca em JavaScript</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+  </head>
+
+  <body>
+    <header id="header">
+      <nav class="">
+        <!-- /menu -->
+      </nav>
+    </header>
+    <main>
+      <section>
+        <div class="container">
+          <div class="titulo">
+            <h1>Jogo da Forca</h1>
+            <button onclick="reiniciar()">Reiniciar</button>
+          </div>
+          <div class="texto">Digite com as letras de seu teclado</div>
+          <div id="palavra" class="texto"></div>
+          <p class="texto">Digite a palavra em Ingles!<br>Cuidado pois a palavra pode ter mais de uma tradução.</p>
+       
+
+          
+          <div class="mensagemFim" id="mensagemFim"> </div>
+            <div class="mensagemOk" id="mensagemOk"> </div>
+       
+
+        <div class="forca" id="forca">
+          <img src="forca.png" alt="" />
+        </div>
+
+        <div id="letras"></div>
+        <br />
+        <p class="texto">Aperte reiniciar para sortear uma nova palavra</p>
+        <p class="texto">Por padrão as palavras não possuem acentos</p>
+      </section>
+ 
+    </main>
+  </body>
+</html>
+<script src="main.js"></script>
