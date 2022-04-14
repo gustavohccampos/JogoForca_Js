@@ -38,17 +38,6 @@ function keyPressed(e) {
 
 //funcao reiniciar o jogo
 function reiniciar() {
-  console.log(
-    'palavra:' +
-      palavra +
-      ' - palavra ingles:' +
-      palavraIngles +
-      ' - count:' +
-      count +
-      ' - Parray:' +
-      parray
-  )
-
   for (var i = 0; i < parray.length; i++) {
     var elemento = document.querySelector('#letra' + i)
     elemento.parentNode.removeChild(elemento)
@@ -59,11 +48,11 @@ function reiniciar() {
   count = 0
   erro = 0
   iniciado = 1
-  document.getElementById('forca').innerHTML = '<img src="forca.png" />'
+  document.getElementById('forca').innerHTML = '<img src="img/forca.png" />'
   document.getElementById('mensagemFim').textContent = ''
   document.getElementById('mensagemOk').textContent = ''
 
-  fetch('palavras.txt')
+  fetch('teste.json')
     .then(response => response.text())
     .then(text => {
       const array = text.split('\r\n')
@@ -86,16 +75,6 @@ function reiniciar() {
 
       //monta o campo das letras para preencher
       contarLetras(palavraIngles, count, parray)
-      console.log(
-        'palavra:' +
-          palavra +
-          ' - palavra ingles:' +
-          palavraIngles +
-          ' - count:' +
-          count +
-          ' - Parray:' +
-          parray
-      )
     })
 }
 
@@ -117,7 +96,7 @@ function tecla(tecla, palavra, count, parray) {
   if (!palavra.includes(tecla)) {
     erro++
     document.getElementById('forca').innerHTML =
-      '<img src="forca' + erro + '.png" />'
+      '<img src="img/forca' + erro + '.png" />'
     if (erro == 5) {
       document.getElementById('mensagemFim').innerHTML =
         '<p>Que pena, Fim de Jogo!Tente outra vez</p><p>A palavra correta é: ' +
@@ -134,18 +113,7 @@ function checkLetras(parray, palavra) {
     juntarLetras += document.getElementById('letra' + i).textContent
   }
   if (juntarLetras == palavra) {
-    document.getElementById('forca').innerHTML = '<img src="fim.png" />'
+    document.getElementById('forca').innerHTML = '<img src="img/fim.png" />'
     return true
   } else return false
 }
-
-console.log(
-  'palavra:' +
-    palavra +
-    ' - palavra ingles:' +
-    palavraIngles +
-    ' - count:' +
-    count +
-    ' - Parray:' +
-    parray
-)
